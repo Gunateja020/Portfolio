@@ -34,3 +34,13 @@ export interface Language {
   level: string;
   sublevel: string;
 }
+
+export interface Certificate {
+  title: string;
+  issuer: string;
+  date: string;
+  description?: string;
+  link?: string;
+  image?: string;
+  logo?: string;
+}

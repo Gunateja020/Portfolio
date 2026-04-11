@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { PROJECTS } from '@/constants';
 import { getAssetPath } from '@/lib/assets';
-import { ExternalLink, ArrowUpRight, X } from 'lucide-react';
+import { ExternalLink, ArrowUpRight, X, Github } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { Project } from '@/types';
@@ -32,8 +32,8 @@ export function Projects() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
-                <span className="text-accent font-mono text-sm tracking-widest uppercase mb-4 block">04. Portfolio</span>
-                <h2 className="text-4xl font-bold tracking-tight mb-6">Featured <br />Projects.</h2>
+                <span className="text-accent font-mono text-sm tracking-widest uppercase mb-4 block">Portfolio</span>
+                <h2 className="text-4xl font-bold tracking-tight mb-6">Featured Projects</h2>
                 <div className="w-12 bg-accent h-1 mb-8 rounded-full" />
                 <p className="text-muted-foreground leading-relaxed mb-8">
                   A selection of my recent work in data science, machine learning, and full-stack development. Click on a card to see more details.
@@ -82,10 +82,15 @@ export function Projects() {
                     </div>
                     
                     <CardContent className="p-8 flex-grow">
-                      <div className="flex justify-between items-start mb-6">
+                      <div className="flex justify-between items-start mb-4">
                         <h3 className="text-2xl font-bold group-hover:text-accent transition-colors leading-tight">{project.title}</h3>
                         <ArrowUpRight className="text-muted-foreground group-hover:text-accent transition-colors shrink-0" size={24} />
                       </div>
+                      
+                      <p className="text-sm text-muted-foreground mb-6 line-clamp-1">
+                        {project.description}
+                      </p>
+
                       <div className="flex flex-wrap gap-2">
                         {project.tags.map((tag) => (
                           <Badge key={tag} variant="outline" className="text-[10px] uppercase tracking-wider font-bold border-muted-foreground/30">
@@ -166,11 +171,22 @@ export function Projects() {
 
                   <h3 className="text-3xl md:text-4xl font-bold mb-6 tracking-tight">{selectedProject.title}</h3>
                   
-                  <p className="text-muted-foreground text-lg leading-relaxed mb-8">
+                  <p className="text-muted-foreground text-lg leading-relaxed mb-8 text-justify">
                     {selectedProject.longDescription || selectedProject.description}
                   </p>
 
                   <div className="flex flex-wrap gap-4 pt-6 border-t border-muted">
+                    {selectedProject.github && (
+                      <a 
+                        href={selectedProject.github} 
+                        target="_blank" 
+                        rel="noreferrer"
+                        className="flex items-center gap-2 px-6 py-3 rounded-full bg-foreground text-background font-bold hover:bg-foreground/80 transition-all"
+                      >
+                        <Github size={20} />
+                        View Code
+                      </a>
+                    )}
                     {selectedProject.link && (
                       <a 
                         href={selectedProject.link} 

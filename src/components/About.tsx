@@ -15,8 +15,8 @@ export function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
-                <span className="text-accent font-mono text-sm tracking-widest uppercase mb-4 block">01. About Me</span>
-                <h2 className="text-4xl font-bold tracking-tight mb-6">A Data-Driven <br />Storyteller.</h2>
+                <span className="text-accent font-mono text-sm tracking-widest uppercase mb-4 block">About Me</span>
+                <h2 className="text-4xl font-bold tracking-tight mb-6">A Data-Driven Storyteller</h2>
                 <Separator className="w-12 bg-accent h-1 mb-8" />
                 <p className="text-muted-foreground leading-relaxed mb-6">
                   Based in {PERSONAL_INFO.location}, I bridge the gap between complex data and actionable business insights.
@@ -33,20 +33,20 @@ export function About() {
               transition={{ delay: 0.2 }}
               className="space-y-8"
             >
-              <p className="text-xl leading-relaxed text-foreground/90">
+              <p className="text-xl leading-relaxed text-foreground/90 text-justify">
                 {PERSONAL_INFO.summary}
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-6">
                 <div className="p-6 rounded-2xl border bg-background/50">
                   <h3 className="text-lg font-bold mb-3">My Philosophy</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-sm text-muted-foreground leading-relaxed text-justify">
                     I believe that data is only as good as the questions we ask of it. My approach combines rigorous statistical analysis with creative problem-solving to build models that don't just predict, but explain.
                   </p>
                 </div>
                 <div className="p-6 rounded-2xl border bg-background/50">
                   <h3 className="text-lg font-bold mb-3">What I Do</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-sm text-muted-foreground leading-relaxed text-justify">
                     From cleaning messy datasets to deploying deep learning models, I handle the full data lifecycle. I'm particularly passionate about time-series forecasting and computer vision.
                   </p>
                 </div>
@@ -101,7 +101,7 @@ export function About() {
                       x: {
                         repeat: Infinity,
                         repeatType: "loop",
-                        duration: 35,
+                        duration: 40,
                         ease: "linear"
                       }
                     }}
@@ -109,8 +109,9 @@ export function About() {
                     {[1, 2].map((set) => (
                       <div key={set} className="flex items-center gap-16 pr-16">
                         {[
-                          "VISVESVARAYA TECHNOLOGICAL UNIVERSITY", "GREAT LEARNING", "COGNIZANT", 
-                          "PENTAGON SPACE", "ARDEN UNIVERSITY"
+                          "AWS", "COGNIZANT", "VISVESVARAYA TECHNOLOGICAL UNIVERSITY", 
+                          "CISCO NETWORKING", "GREAT LEARNING", "ARDEN UNIVERSITY", "WIPRO",
+                          "PENTAGON SPACE", "SAYLOR UNIVERSITY", "BITM", "OPEN LEARN"
                         ].map((org, i) => (
                           <span key={i} className="text-xl md:text-2xl font-bold tracking-tighter shrink-0">
                             {org}
@@ -128,7 +129,7 @@ export function About() {
                       x: {
                         repeat: Infinity,
                         repeatType: "loop",
-                        duration: 40,
+                        duration: 45,
                         ease: "linear"
                       }
                     }}
@@ -136,8 +137,9 @@ export function About() {
                     {[1, 2].map((set) => (
                       <div key={set} className="flex items-center gap-16 pr-16">
                         {[
-                          "BITM", "WIPRO", "OPEN LEARN", "SAYLOR UNIVERSITY", 
-                          "ARDEN UNIVERSITY", "COGNIZANT"
+                          "BITM", "PENTAGON SPACE", "AWS", "ARDEN UNIVERSITY", 
+                          "COGNIZANT", "SAYLOR UNIVERSITY", "CISCO NETWORKING",
+                          "GREAT LEARNING", "OPEN LEARN", "WIPRO", "VISVESVARAYA TECHNOLOGICAL UNIVERSITY"
                         ].map((org, i) => (
                           <span key={i} className="text-xl md:text-2xl font-bold tracking-tighter shrink-0">
                             {org}

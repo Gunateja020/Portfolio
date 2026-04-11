@@ -1,4 +1,4 @@
-import { Project, Experience, Education, SkillGroup, Language } from './types';
+import { Project, Experience, Education, SkillGroup, Language, Certificate } from './types';
 
 export const PERSONAL_INFO = {
   name: "Gunateja Pothula",
@@ -12,45 +12,45 @@ export const PERSONAL_INFO = {
 };
 
 export const LANGUAGES: Language[] = [
-  { name: "Telugu", level: "NATIVE", sublevel: "Primary Language" },
-  { name: "English", level: "FLUENT", sublevel: "C1 - Advanced Proficiency" },
-  { name: "Kannada", level: "FLUENT", sublevel: "C1 - Advanced Proficiency" },
-  { name: "Hindi", level: "CONVERSATIONAL", sublevel: "B2 - Upper Intermediate" },
   { name: "German", level: "CONVERSATIONAL", sublevel: "B1 - Able to convey ideas effectively" },
+  { name: "English", level: "FLUENT", sublevel: "C1 - Advanced Proficiency" },
+  { name: "Hindi", level: "CONVERSATIONAL", sublevel: "B2 - Upper Intermediate" },
+  { name: "Telugu", level: "NATIVE", sublevel: "Primary Language" },
+  { name: "Kannada", level: "FLUENT", sublevel: "C1 - Advanced Proficiency" },
 ];
 
 export const PROJECTS: Project[] = [
   {
     title: "Flight Delay Prediction & Optimization",
-    description: "Developed and evaluated XGBoost and LSTM time-series models on 140K+ flight records to predict departure delays.",
-    longDescription: "Developed and evaluated XGBoost and LSTM time-series models on 140K+ flight records to predict departure delays. Achieved projected cost savings exceeding $140K by optimizing scheduling and resource allocation. The project involved extensive feature engineering, handling class imbalance, and implementing a real-time prediction pipeline.",
+    description: "Predicts flight delays using XGBoost and LSTM models with 140K+ records.",
+    longDescription: "This project leverages a massive dataset of 140,000+ flight records to predict departure delays with high precision. By combining traditional gradient boosting (XGBoost) with deep learning time-series architectures (LSTM), the system identifies patterns in weather, scheduling, and historical performance. The implementation includes a robust data preprocessing pipeline, feature engineering for temporal data, and a real-time inference engine that helps airlines optimize resource allocation and reduce operational costs by an estimated $140K annually.",
     tags: ["Python", "XGBoost", "LSTM", "Time-Series", "Pandas", "NumPy"],
     image: "https://images.unsplash.com/photo-1569154941061-e231b4725ef1?auto=format&fit=crop&q=80&w=800",
-    github: "https://github.com/Gunateja020"
-  },
-  {
-    title: "Real-time Face Recognition System",
-    description: "Designed and implemented a real-time face recognition system for secure door access using computer vision techniques.",
-    longDescription: "Designed and implemented a real-time face recognition system for secure door access using computer vision techniques, achieving 95%+ accuracy. The system uses MTCNN for face detection and FaceNet for feature extraction, integrated with a local database for identity verification. It supports real-time processing at 30+ FPS on standard hardware.",
-    tags: ["Computer Vision", "Python"],
-    image: "face_scan_img.jpg",
-    github: "https://github.com/Gunateja020"
+    github: "https://github.com/Gunateja020/Flight_delay_prediction"
   },
   {
     title: "Formula 1 Race Prediction",
-    description: "Engineered deep learning models (Random Forest, XGBoost, CNN) for Formula 1 race prediction achieving F1-score ≥ 0.8.",
-    longDescription: "Engineered deep learning models (Random Forest, XGBoost, CNN) for Formula 1 race prediction achieving F1-score ≥ 0.8 and RMSE < 10. The project analyzed historical race data, weather conditions, and driver performance to predict podium finishes and race winners. It includes a custom data scraper for real-time F1 data updates.",
+    description: "Deep learning system predicting F1 podium finishes with an F1-score of 0.8+.",
+    longDescription: "A specialized sports analytics platform that predicts Formula 1 race outcomes using a multi-model approach. It integrates Random Forest for feature importance, XGBoost for tabular data, and CNNs for analyzing track layouts and historical performance trends. The model accounts for dynamic variables such as weather forecasts, tire degradation, and driver-specific track history. Achieved an F1-score of 0.8+ and an RMSE of less than 10, providing highly accurate podium and winner predictions. Includes a custom Python scraper for real-time data ingestion from official F1 APIs.",
     tags: ["Deep Learning", "Random Forest", "XGBoost", "CNN", "Sports Analytics"],
     image: "f1_prediction_img.jpg",
-    github: "https://github.com/Gunateja020"
+    github: "https://github.com/Gunateja020/F1-Racing"
   },
   {
-    title: "Full-stack Banking Application",
-    description: "Developed a Java-based full-stack banking application managing 100+ customer accounts and transactions.",
-    longDescription: "Developed a Java-based full-stack banking application managing 100+ customer accounts and transactions with SQL schema validation. Features include secure user authentication, real-time transaction history, fund transfers, and administrative controls. Built using Spring Boot for the backend and React for the frontend.",
-    tags: ["Java", "SQL", "Full-stack", "Banking"],
-    image: "banking_app_img.webp",
-    github: "https://github.com/Gunateja020"
+    title: "Deutsch Learnen",
+    description: "AI-powered German learning platform with interactive chat and progress tracking.",
+    longDescription: "An immersive language learning application designed to take users from A1 to B1 proficiency. The core feature is an AI-powered Chat Bot that provides real-time conversation practice, correcting grammar and suggesting vocabulary in context. The system uses a MERN stack architecture with integrated LLM APIs for natural language processing. It features a spaced-repetition vocabulary builder, interactive grammar modules, and a personalized dashboard that tracks learning milestones. The UI is built with React and Tailwind CSS, focusing on a clean, distraction-free learning environment.",
+    tags: ["React", "AI Chat Bot", "AI", "Tailwind CSS", "German Language", "Web Development"],
+    image: "deutsch_learnen_img.jpg",
+    github: "https://github.com/Gunateja020/Deutsch_Lernen"
+  },
+  {
+    title: "Hospital Management System",
+    description: "Full-stack MERN application for healthcare scheduling and patient record management.",
+    longDescription: "A comprehensive healthcare administration platform built on the MERN stack (MongoDB, Express.js, React, Node.js). It streamlines hospital operations by providing secure portals for patients, doctors, and administrators. Patients can book and manage appointments in real-time, while doctors have access to digital health records and automated scheduling. The system implements JWT-based authentication, role-based access control, and a robust MongoDB schema for handling sensitive patient data. The frontend features a responsive dashboard that provides quick access to medical history, prescriptions, and billing information.",
+    tags: ["Full-stack", "MongoDB", "Express.js", "React", "Node.js", "Healthcare"],
+    image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=800",
+    github: "https://github.com/Gunateja020/Hospital-Website"
   }
 ];
 
@@ -142,5 +142,48 @@ export const SKILLS: SkillGroup[] = [
   {
     category: "AI Tools",
     skills: ["Large Language Models", "Prompt Engineering", "Context Engineering", "LLM APIs", "RAG"]
+  }
+];
+
+export const CERTIFICATES: Certificate[] = [
+  {
+    title: "AWS Certified Data Engineering",
+    issuer: "Amazon Web Services (AWS)",
+    date: "Sept 2025",
+    description: "AWS Academy Graduate - Data Engineering training badge. Covers core data engineering concepts on AWS including storage, processing, and security.",
+    image: "aws_data_engineering_cert.jpg",
+    logo: "https://www.google.com/s2/favicons?domain=aws.amazon.com&sz=128"
+  },
+  {
+    title: "Cloud Foundations",
+    issuer: "Great Learning",
+    date: "Jan 2024",
+    description: "Comprehensive course on cloud computing fundamentals, service models, and deployment strategies.",
+    image: "cloud_foundations_cert.jpg",
+    logo: "https://www.google.com/s2/favicons?domain=mygreatlearning.com&sz=128"
+  },
+  {
+    title: "Software Engineering",
+    issuer: "Saylor University",
+    date: "Dec 2023",
+    description: "Software Engineering Certificate covering the software development lifecycle, methodologies, and best practices.",
+    image: "software_engineering_cert.jpg",
+    logo: "https://www.google.com/s2/favicons?domain=saylor.org&sz=128"
+  },
+  {
+    title: "Computing and IT",
+    issuer: "OpenLearn",
+    date: "Dec 2023",
+    description: "Computing and IT Certificate focusing on fundamental concepts of information technology and computer systems.",
+    image: "computing_it_cert.jpg",
+    logo: "https://www.google.com/s2/favicons?domain=open.edu&sz=128"
+  },
+  {
+    title: "TalentNext course on Java J2EE",
+    issuer: "Wipro",
+    date: "Oct 2022",
+    description: "Wipro TalentNext certificate for completing the Java J2EE course, focusing on enterprise application development.",
+    image: "wipro_java_cert.jpg",
+    logo: "https://www.google.com/s2/favicons?domain=wipro.com&sz=128"
   }
 ];

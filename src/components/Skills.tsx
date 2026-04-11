@@ -15,8 +15,8 @@ export function Skills() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
-                <span className="text-accent font-mono text-sm tracking-widest uppercase mb-4 block">02. Expertise</span>
-                <h2 className="text-4xl font-bold tracking-tight mb-6">Technical <br />Arsenal.</h2>
+                <span className="text-accent font-mono text-sm tracking-widest uppercase mb-4 block">Expertise</span>
+                <h2 className="text-4xl font-bold tracking-tight mb-6">Technical Arsenal</h2>
                 <div className="w-12 bg-accent h-1 mb-8 rounded-full" />
                 <p className="text-muted-foreground leading-relaxed">
                   A comprehensive set of tools and technologies I use to solve complex data problems and build intelligent systems.

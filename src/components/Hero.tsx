@@ -68,8 +68,7 @@ export function Hero() {
           </div>
           
           <h1 className="text-6xl md:text-8xl font-bold tracking-tighter leading-[0.9] mb-8">
-            Turning Data Into <br />
-            <span className="text-accent">Intelligence.</span>
+            Turning Data Into <span className="text-accent">Intelligence</span>
           </h1>
           
           <p className="text-xl text-muted-foreground max-w-lg mb-10 leading-relaxed">

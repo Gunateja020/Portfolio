@@ -6,8 +6,8 @@ export function Contact() {
     <section id="contact" className="py-8 md:py-12 lg:py-20 bg-muted/30">
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center">
-          <span className="text-accent font-mono text-sm tracking-widest uppercase mb-4 block">05. Contact</span>
-          <h2 className="text-5xl font-bold tracking-tight mb-8">Let's Build Something Great.</h2>
+          <span className="text-accent font-mono text-sm tracking-widest uppercase mb-4 block">Contact</span>
+          <h2 className="text-5xl font-bold tracking-tight mb-8">Let's Build Something Great</h2>
           <p className="text-muted-foreground text-lg leading-relaxed mb-8">
             I'm currently looking for new opportunities as a Data Scientist or Machine Learning Engineer. I am <strong>available to relocate</strong> and can <strong>join immediately</strong>. Whether you have a question or just want to say hi, I'll try my best to get back to you!
           </p>

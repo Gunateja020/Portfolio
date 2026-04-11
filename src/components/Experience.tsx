@@ -15,8 +15,8 @@ export function Experience() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
-                <span className="text-accent font-mono text-sm tracking-widest uppercase mb-4 block">03. Journey</span>
-                <h2 className="text-4xl font-bold tracking-tight mb-6">Experience & <br />Education.</h2>
+                <span className="text-accent font-mono text-sm tracking-widest uppercase mb-4 block">Journey</span>
+                <h2 className="text-4xl font-bold tracking-tight mb-6">Experience & Education</h2>
                 <div className="w-12 bg-accent h-1 mb-8 rounded-full" />
                 <p className="text-muted-foreground leading-relaxed">
                   My professional trajectory and academic background, showcasing my growth in the field of data science.
