@@ -33,7 +33,7 @@ export const PROJECTS: Project[] = [
     description: "Designed and implemented a real-time face recognition system for secure door access using computer vision techniques.",
     longDescription: "Designed and implemented a real-time face recognition system for secure door access using computer vision techniques, achieving 95%+ accuracy. The system uses MTCNN for face detection and FaceNet for feature extraction, integrated with a local database for identity verification. It supports real-time processing at 30+ FPS on standard hardware.",
     tags: ["Computer Vision", "Python"],
-    image: "face-scan.jpg",
+    image: "face_scan_img.jpg",
     github: "https://github.com/Gunateja020"
   },
   {
@@ -41,7 +41,7 @@ export const PROJECTS: Project[] = [
     description: "Engineered deep learning models (Random Forest, XGBoost, CNN) for Formula 1 race prediction achieving F1-score ≥ 0.8.",
     longDescription: "Engineered deep learning models (Random Forest, XGBoost, CNN) for Formula 1 race prediction achieving F1-score ≥ 0.8 and RMSE < 10. The project analyzed historical race data, weather conditions, and driver performance to predict podium finishes and race winners. It includes a custom data scraper for real-time F1 data updates.",
     tags: ["Deep Learning", "Random Forest", "XGBoost", "CNN", "Sports Analytics"],
-    image: "f1-prediction.jpg",
+    image: "f1_prediction_img.jpg",
     github: "https://github.com/Gunateja020"
   },
   {
@@ -49,7 +49,7 @@ export const PROJECTS: Project[] = [
     description: "Developed a Java-based full-stack banking application managing 100+ customer accounts and transactions.",
     longDescription: "Developed a Java-based full-stack banking application managing 100+ customer accounts and transactions with SQL schema validation. Features include secure user authentication, real-time transaction history, fund transfers, and administrative controls. Built using Spring Boot for the backend and React for the frontend.",
     tags: ["Java", "SQL", "Full-stack", "Banking"],
-    image: "banking-app.webp",
+    image: "banking_app_img.webp",
     github: "https://github.com/Gunateja020"
   }
 ];

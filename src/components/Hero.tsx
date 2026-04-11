@@ -34,7 +34,7 @@ export function Hero() {
         >
           <div className="relative z-10 aspect-[4/5] rounded-3xl overflow-hidden border-2 border-muted bg-muted/30 backdrop-blur-sm p-4">
             <img 
-              src={getAssetPath('profile.jpg')} 
+              src={getAssetPath('profile_img.jpg')} 
               alt={PERSONAL_INFO.name}
               className="w-full h-full object-cover object-top rounded-2xl transition-all duration-700"
               referrerPolicy="no-referrer"
@@ -95,7 +95,7 @@ export function Hero() {
               className="rounded-full px-8"
               nativeButton={false}
               render={
-                <a href={getAssetPath('resume.pdf')} target="_blank" rel="noreferrer">
+                <a href={getAssetPath('resume_cv.pdf')} target="_blank" rel="noreferrer">
                   View CV
                   <ExternalLink className="ml-2" size={18} />
                 </a>
@@ -112,7 +112,7 @@ export function Hero() {
           >
             <div className="relative z-10 aspect-[4/5] rounded-3xl overflow-hidden border-2 border-muted bg-muted/30 backdrop-blur-sm p-4">
               <img 
-                src={getAssetPath('profile.jpg')} 
+                src={getAssetPath('profile_img.jpg')} 
                 alt={PERSONAL_INFO.name}
                 className="w-full h-full object-cover object-top rounded-2xl transition-all duration-700"
                 referrerPolicy="no-referrer"
