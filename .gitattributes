@@ -1,0 +1,15 @@
+# Force binary files to be treated as binary
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.webp binary
+*.pdf binary
+*.gif binary
+*.ico binary
+*.mov binary
+*.mp4 binary
+*.zip binary
+*.ttf binary
+*.otf binary
+*.woff binary
+*.woff2 binary

@@ -4,10 +4,10 @@ export function getAssetPath(path: string) {
   // Remove leading slash if present
   const cleanPath = path.startsWith('/') ? path.slice(1) : path;
   
-  // Hardcoding the repository name is the most reliable way to fix
-  // the "white page" / 404 issue on GitHub Pages.
-  const isProduction = import.meta.env.PROD;
-  const base = isProduction ? '/Portfolio/' : '/';
+  // Use Vite's built-in BASE_URL which we set to '/Portfolio/' in vite.config.ts
+  // This ensures paths are correct in both dev ('/') and prod ('/Portfolio/')
+  const baseUrl = import.meta.env.BASE_URL || '/';
+  const normalizedBase = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
   
-  return `${base}${cleanPath}`;
+  return `${normalizedBase}${cleanPath}`;
 }
