@@ -2,6 +2,7 @@ import { motion } from 'motion/react';
 import { ArrowRight, ExternalLink, Database, BarChart3, BrainCircuit, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { PERSONAL_INFO } from '@/constants';
+import { getAssetPath } from '@/lib/assets';
 
 export function Hero() {
   return (
@@ -33,7 +34,7 @@ export function Hero() {
         >
           <div className="relative z-10 aspect-[4/5] rounded-3xl overflow-hidden border-2 border-muted bg-muted/30 backdrop-blur-sm p-4">
             <img 
-              src="/profile.jpg" 
+              src={getAssetPath('profile.jpg')} 
               alt={PERSONAL_INFO.name}
               className="w-full h-full object-cover object-top rounded-2xl transition-all duration-700"
               referrerPolicy="no-referrer"
@@ -94,7 +95,7 @@ export function Hero() {
               className="rounded-full px-8"
               nativeButton={false}
               render={
-                <a href="/resume.pdf" target="_blank" rel="noreferrer">
+                <a href={getAssetPath('resume.pdf')} target="_blank" rel="noreferrer">
                   View CV
                   <ExternalLink className="ml-2" size={18} />
                 </a>
@@ -111,7 +112,7 @@ export function Hero() {
           >
             <div className="relative z-10 aspect-[4/5] rounded-3xl overflow-hidden border-2 border-muted bg-muted/30 backdrop-blur-sm p-4">
               <img 
-                src="/profile.jpg" 
+                src={getAssetPath('profile.jpg')} 
                 alt={PERSONAL_INFO.name}
                 className="w-full h-full object-cover object-top rounded-2xl transition-all duration-700"
                 referrerPolicy="no-referrer"

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { PROJECTS } from '@/constants';
+import { getAssetPath } from '@/lib/assets';
 import { ExternalLink, ArrowUpRight, X } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
@@ -68,7 +69,7 @@ export function Projects() {
                   <Card className="group overflow-hidden bg-muted/20 border-muted hover:border-accent/30 transition-all duration-300 h-full flex flex-col cursor-pointer">
                     <div className="relative aspect-video overflow-hidden">
                       <img 
-                        src={project.image} 
+                        src={getAssetPath(project.image)} 
                         alt={project.title}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         referrerPolicy="no-referrer"
@@ -147,7 +148,7 @@ export function Projects() {
               <div className="overflow-y-auto flex-grow">
                 <div className="aspect-video w-full overflow-hidden">
                   <img 
-                    src={selectedProject.image} 
+                    src={getAssetPath(selectedProject.image)} 
                     alt={selectedProject.title}
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"
