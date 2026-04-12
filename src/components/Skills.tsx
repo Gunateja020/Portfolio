@@ -45,13 +45,18 @@ export function Skills() {
                       <h3 className="text-xl font-bold mb-6 group-hover:text-accent transition-colors">{group.category}</h3>
                       <div className="flex flex-wrap gap-2">
                         {group.skills.map((skill) => (
-                          <Badge 
-                            key={skill} 
-                            variant="secondary" 
-                            className="bg-background border font-medium px-3 py-1 break-words whitespace-normal text-center"
+                          <motion.div
+                            key={skill}
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.95 }}
                           >
-                            {skill}
-                          </Badge>
+                            <Badge 
+                              variant="secondary" 
+                              className="bg-background border font-medium px-3 py-1.5 break-words whitespace-normal text-left cursor-default leading-tight h-auto"
+                            >
+                              {skill}
+                            </Badge>
+                          </motion.div>
                         ))}
                       </div>
                     </CardContent>

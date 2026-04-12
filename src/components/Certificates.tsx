@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { CERTIFICATES } from '@/constants';
 import { ExternalLink, Award, X, ArrowUpRight, Maximize2 } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 import { getAssetPath } from '@/lib/assets';
 import { Certificate } from '@/types';
 
@@ -133,32 +134,29 @@ export function Certificates() {
               </button>
 
               <div className="overflow-y-auto flex-grow">
-                <div className="w-full bg-muted/10 p-4 md:p-12 flex items-center justify-center min-h-[300px] md:min-h-[500px] relative group/img">
+                {/* Partial Image Preview (Top 25%) */}
+                <div className="w-full bg-muted/10 relative group/img overflow-hidden h-[150px] md:h-[200px]">
                   <div 
-                    className="relative cursor-zoom-in"
+                    className="absolute inset-0 cursor-zoom-in"
                     onClick={() => setFullscreenImage(getAssetPath(selectedCert.image || ''))}
                   >
                     <img 
                       src={getAssetPath(selectedCert.image || '')} 
                       alt={selectedCert.title}
-                      className="max-w-full h-auto rounded-xl shadow-2xl border-4 border-white"
+                      className="w-full object-cover object-top"
                       referrerPolicy="no-referrer"
                     />
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        setFullscreenImage(getAssetPath(selectedCert.image || ''));
-                      }}
-                      className="absolute bottom-4 right-4 p-3 rounded-full bg-background/80 backdrop-blur-md border shadow-lg opacity-100 md:opacity-0 md:group-hover/img:opacity-100 transition-all hover:bg-accent hover:text-white scale-90 hover:scale-100"
-                      title="View Fullscreen"
-                    >
+                    {/* Gradient Overlay to fade out the bottom */}
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-card" />
+                    
+                    <div className="absolute bottom-4 right-4 p-3 rounded-full bg-background/80 backdrop-blur-md border shadow-lg opacity-100 md:opacity-0 md:group-hover/img:opacity-100 transition-all hover:bg-accent hover:text-white scale-90 hover:scale-100">
                       <Maximize2 size={20} />
-                    </button>
+                    </div>
                   </div>
                 </div>
 
                 <div className="p-8 md:p-12 bg-gradient-to-b from-transparent to-muted/20">
-                  <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
+                  <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12">
                     <div className="flex items-center gap-6">
                       <div className="w-20 h-20 rounded-2xl bg-white border border-muted p-3 flex items-center justify-center overflow-hidden shadow-sm">
                         <LogoImage 
@@ -189,6 +187,14 @@ export function Certificates() {
                   </div>
 
                   <div className="flex flex-wrap gap-4 pt-8 border-t border-muted">
+                    <Button
+                      size="lg"
+                      onClick={() => setFullscreenImage(getAssetPath(selectedCert.image || ''))}
+                      className="rounded-full px-8 bg-foreground text-background hover:bg-foreground/90 font-bold"
+                    >
+                      <Maximize2 className="mr-2" size={20} />
+                      View Full Certificate
+                    </Button>
                     {selectedCert.link && (
                       <a 
                         href={selectedCert.link} 

@@ -28,8 +28,20 @@ export function Hero() {
         {/* Desktop Photo - Hidden on mobile/tablet */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, ease: "easeOut" }}
+          animate={{ 
+            opacity: 1, 
+            scale: 1,
+            y: [0, -15, 0]
+          }}
+          transition={{ 
+            opacity: { duration: 1 },
+            scale: { duration: 1 },
+            y: { 
+              duration: 6, 
+              repeat: Infinity, 
+              ease: "easeInOut" 
+            }
+          }}
           className="relative hidden lg:block lg:order-2 w-full"
         >
           <div className="relative z-10 aspect-[4/5] rounded-3xl overflow-hidden border-2 border-muted bg-muted/30 backdrop-blur-sm p-4">
@@ -68,7 +80,25 @@ export function Hero() {
           </div>
           
           <h1 className="text-6xl md:text-8xl font-bold tracking-tighter leading-[0.9] mb-8">
-            Turning Data Into <span className="text-accent">Intelligence</span>
+            {["Turning", "Data", "Into"].map((word, i) => (
+              <motion.span
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1 + 0.5, duration: 0.8 }}
+                className="inline-block mr-4"
+              >
+                {word}
+              </motion.span>
+            ))}
+            <motion.span 
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 1, duration: 0.8 }}
+              className="text-accent inline-block"
+            >
+              Intelligence
+            </motion.span>
           </h1>
           
           <p className="text-xl text-muted-foreground max-w-lg mb-10 leading-relaxed">

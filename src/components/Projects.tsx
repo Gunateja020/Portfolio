@@ -87,7 +87,7 @@ export function Projects() {
                         <ArrowUpRight className="text-muted-foreground group-hover:text-accent transition-colors shrink-0" size={24} />
                       </div>
                       
-                      <p className="text-sm text-muted-foreground mb-6 line-clamp-1">
+                      <p className="text-sm text-muted-foreground mb-6 line-clamp-2 md:line-clamp-3">
                         {project.description}
                       </p>
 

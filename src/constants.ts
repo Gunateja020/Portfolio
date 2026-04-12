@@ -38,7 +38,7 @@ export const PROJECTS: Project[] = [
   },
   {
     title: "Deutsch Learnen",
-    description: "AI-powered German learning platform with interactive chat and progress tracking.",
+    description: "AI-powered German learning platform with interactive chat and progress tracking (MongoDB, Express.js, React, Node.js).",
     longDescription: "An immersive language learning application designed to take users from A1 to B1 proficiency. The core feature is an AI-powered Chat Bot that provides real-time conversation practice, correcting grammar and suggesting vocabulary in context. The system uses a MERN stack architecture with integrated LLM APIs for natural language processing. It features a spaced-repetition vocabulary builder, interactive grammar modules, and a personalized dashboard that tracks learning milestones. The UI is built with React and Tailwind CSS, focusing on a clean, distraction-free learning environment.",
     tags: ["React", "AI Chat Bot", "AI", "Tailwind CSS", "German Language", "Web Development"],
     image: "deutsch_learnen_img.jpg",
@@ -46,7 +46,7 @@ export const PROJECTS: Project[] = [
   },
   {
     title: "Hospital Management System",
-    description: "Full-stack MERN application for healthcare scheduling and patient record management.",
+    description: "Full-stack MERN (MongoDB, Express.js, React, Node.js) application for healthcare scheduling and patient record management.",
     longDescription: "A comprehensive healthcare administration platform built on the MERN stack (MongoDB, Express.js, React, Node.js). It streamlines hospital operations by providing secure portals for patients, doctors, and administrators. Patients can book and manage appointments in real-time, while doctors have access to digital health records and automated scheduling. The system implements JWT-based authentication, role-based access control, and a robust MongoDB schema for handling sensitive patient data. The frontend features a responsive dashboard that provides quick access to medical history, prescriptions, and billing information.",
     tags: ["Full-stack", "MongoDB", "Express.js", "React", "Node.js", "Healthcare"],
     image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=800",
@@ -137,7 +137,7 @@ export const SKILLS: SkillGroup[] = [
   },
   {
     category: "Web & APIs",
-    skills: ["HTML", "CSS", "JavaScript", "MERN Stack", "REST APIs"]
+    skills: ["HTML", "CSS", "JavaScript", "MERN Stack (MongoDB, Express.js, React, Node.js)", "REST APIs"]
   },
   {
     category: "AI Tools",
