@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { CERTIFICATES } from '@/constants';
-import { ExternalLink, Award, X, ArrowUpRight } from 'lucide-react';
+import { ExternalLink, Award, X, ArrowUpRight, Maximize2 } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { getAssetPath } from '@/lib/assets';
 import { Certificate } from '@/types';
@@ -30,9 +30,10 @@ function LogoImage({ src, alt, className }: { src?: string; alt: string; classNa
 
 export function Certificates() {
   const [selectedCert, setSelectedCert] = useState<Certificate | null>(null);
+  const [fullscreenImage, setFullscreenImage] = useState<string | null>(null);
 
   useEffect(() => {
-    if (selectedCert) {
+    if (selectedCert || fullscreenImage) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
@@ -40,7 +41,7 @@ export function Certificates() {
     return () => {
       document.body.style.overflow = 'unset';
     };
-  }, [selectedCert]);
+  }, [selectedCert, fullscreenImage]);
 
   return (
     <section id="certificates" className="py-8 md:py-12 lg:py-20 bg-muted/30">
@@ -132,13 +133,25 @@ export function Certificates() {
               </button>
 
               <div className="overflow-y-auto flex-grow">
-                <div className="w-full bg-muted/10 p-4 md:p-12 flex items-center justify-center min-h-[300px] md:min-h-[500px]">
-                  <img 
-                    src={getAssetPath(selectedCert.image || '')} 
-                    alt={selectedCert.title}
-                    className="max-w-full h-auto rounded-xl shadow-2xl border-4 border-white"
-                    referrerPolicy="no-referrer"
-                  />
+                <div className="w-full bg-muted/10 p-4 md:p-12 flex items-center justify-center min-h-[300px] md:min-h-[500px] relative group/img">
+                  <div className="relative">
+                    <img 
+                      src={getAssetPath(selectedCert.image || '')} 
+                      alt={selectedCert.title}
+                      className="max-w-full h-auto rounded-xl shadow-2xl border-4 border-white"
+                      referrerPolicy="no-referrer"
+                    />
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setFullscreenImage(getAssetPath(selectedCert.image || ''));
+                      }}
+                      className="absolute bottom-4 right-4 p-3 rounded-full bg-background/80 backdrop-blur-md border shadow-lg opacity-0 group-hover/img:opacity-100 transition-all hover:bg-accent hover:text-white scale-90 hover:scale-100"
+                      title="View Fullscreen"
+                    >
+                      <Maximize2 size={20} />
+                    </button>
+                  </div>
                 </div>
 
                 <div className="p-8 md:p-12 bg-gradient-to-b from-transparent to-muted/20">
@@ -189,6 +202,35 @@ export function Certificates() {
               </div>
             </motion.div>
           </div>
+        )}
+      </AnimatePresence>
+
+      {/* Fullscreen Image Overlay */}
+      <AnimatePresence>
+        {fullscreenImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[200] bg-black/95 flex items-center justify-center p-4 md:p-8 cursor-zoom-out"
+            onClick={() => setFullscreenImage(null)}
+          >
+            <button 
+              onClick={() => setFullscreenImage(null)}
+              className="absolute top-6 right-6 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all z-30 border border-white/20"
+            >
+              <X size={24} />
+            </button>
+            <motion.img
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              src={fullscreenImage}
+              alt="Certificate Fullscreen"
+              className="max-w-full max-h-full object-contain shadow-2xl"
+              referrerPolicy="no-referrer"
+            />
+          </motion.div>
         )}
       </AnimatePresence>
     </section>
