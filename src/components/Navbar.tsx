@@ -16,6 +16,7 @@ const navItems = [
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -61,7 +62,7 @@ export function Navbar() {
 
         {/* Mobile Nav */}
         <div className="md:hidden">
-          <Sheet>
+          <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger
               nativeButton={true}
               render={
@@ -70,12 +71,13 @@ export function Navbar() {
                 </Button>
               }
             />
-            <SheetContent side="right" className="bg-background border-l">
-              <div className="flex flex-col gap-8 mt-16 px-8">
+            <SheetContent side="right" className="bg-background border-l overflow-y-auto">
+              <div className="flex flex-col gap-8 my-16 px-8 min-h-min">
                 {navItems.map((item) => (
                   <a
                     key={item.name}
                     href={item.href}
+                    onClick={() => setIsOpen(false)}
                     className="text-3xl font-bold tracking-tight hover:text-accent transition-colors"
                   >
                     {item.name}

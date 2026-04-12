@@ -134,7 +134,10 @@ export function Certificates() {
 
               <div className="overflow-y-auto flex-grow">
                 <div className="w-full bg-muted/10 p-4 md:p-12 flex items-center justify-center min-h-[300px] md:min-h-[500px] relative group/img">
-                  <div className="relative">
+                  <div 
+                    className="relative cursor-zoom-in"
+                    onClick={() => setFullscreenImage(getAssetPath(selectedCert.image || ''))}
+                  >
                     <img 
                       src={getAssetPath(selectedCert.image || '')} 
                       alt={selectedCert.title}
@@ -146,7 +149,7 @@ export function Certificates() {
                         e.stopPropagation();
                         setFullscreenImage(getAssetPath(selectedCert.image || ''));
                       }}
-                      className="absolute bottom-4 right-4 p-3 rounded-full bg-background/80 backdrop-blur-md border shadow-lg opacity-0 group-hover/img:opacity-100 transition-all hover:bg-accent hover:text-white scale-90 hover:scale-100"
+                      className="absolute bottom-4 right-4 p-3 rounded-full bg-background/80 backdrop-blur-md border shadow-lg opacity-100 md:opacity-0 md:group-hover/img:opacity-100 transition-all hover:bg-accent hover:text-white scale-90 hover:scale-100"
                       title="View Fullscreen"
                     >
                       <Maximize2 size={20} />
