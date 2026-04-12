@@ -11,7 +11,7 @@ import { Background } from './components/Background';
 
 export default function App() {
   return (
-    <div className="relative min-h-screen bg-background text-foreground selection:bg-accent selection:text-white overflow-x-hidden">
+    <div className="relative min-h-screen bg-background text-foreground selection:bg-accent selection:text-white">
       <Background />
       <Navbar />
       <main>
