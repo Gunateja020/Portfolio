@@ -14,7 +14,7 @@ export const PERSONAL_INFO = {
 export const LANGUAGES: Language[] = [
   { name: "German", level: "CONVERSATIONAL", sublevel: "B1 - Able to convey ideas effectively" },
   { name: "English", level: "FLUENT", sublevel: "C1 - Advanced Proficiency" },
-  { name: "Hindi", level: "CONVERSATIONAL", sublevel: "B2 - Upper Intermediate" },
+  { name: "Hindi", level: "FLUENT", sublevel: "C1 - Advanced Proficiency" },
   { name: "Telugu", level: "NATIVE", sublevel: "Primary Language" },
   { name: "Kannada", level: "FLUENT", sublevel: "C1 - Advanced Proficiency" },
 ];
